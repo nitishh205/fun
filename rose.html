@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Surprise Rose</title>
+    <style>
+      :root {
+        --rose-red: #c5162b;
+        --rose-dark: #8f0f1f;
+        --rose-light: #f14a5b;
+        --leaf-dark: #0f5b2d;
+        --leaf-light: #2a8c4d;
+        --bg-1: #fff0f4;
+        --bg-2: #ffe3ea;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Nunito", system-ui, -apple-system, sans-serif;
+        background:
+          radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.85), transparent 45%),
+          radial-gradient(circle at 80% 20%, rgba(255, 210, 224, 0.7), transparent 40%),
+          linear-gradient(135deg, var(--bg-1), var(--bg-2));
+        color: var(--rose-dark);
+        position: relative;
+        overflow: hidden;
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: absolute;
+        inset: -20% -10%;
+        background:
+          radial-gradient(circle, rgba(255, 122, 165, 0.12) 0%, transparent 55%),
+          radial-gradient(circle, rgba(143, 15, 31, 0.08) 0%, transparent 60%);
+        filter: blur(8px);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      body::after {
+        inset: -15% -30%;
+        transform: rotate(12deg);
+        opacity: 0.7;
+      }
+
+      .rose-wrap {
+        display: grid;
+        place-items: center;
+        padding: 2.5rem 1.5rem;
+        gap: 1.6rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .rose-image {
+        width: min(92vw, 680px);
+        max-height: 80vh;
+        object-fit: cover;
+        border-radius: 26px;
+        box-shadow: 0 24px 48px rgba(143, 15, 31, 0.2);
+        border: 6px solid rgba(255, 255, 255, 0.9);
+      }
+
+      .message {
+        max-width: 680px;
+        margin: 0;
+        padding: 1rem 1.4rem;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 170, 195, 0.4);
+        font-size: clamp(1rem, 2.2vw, 1.15rem);
+        line-height: 1.6;
+        text-align: center;
+        color: #8f1f3d;
+        box-shadow: 0 12px 28px rgba(143, 15, 31, 0.12);
+      }
+
+      @media (max-width: 600px) {
+        .rose-image {
+          width: min(92vw, 520px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="rose-wrap">
+      <img
+        class="rose-image"
+        src="https://images.unsplash.com/photo-1562690868-60bbe7293e94?q=80&w=1018&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        alt="Red rose close-up"
+        loading="lazy"
+      />
+      <p class="message">May your day feel as beautiful and bright as this bloom.</p>
+    </main>
+  </body>
+</html>
