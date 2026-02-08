@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Propose Day</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Playfair+Display:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --rose-50: #fff2f6;
+        --rose-100: #ffe0ea;
+        --rose-300: #ff9ebf;
+        --rose-500: #ff6fa3;
+        --rose-700: #b73763;
+        --card-shadow: 0 18px 40px rgba(255, 111, 163, 0.25);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: "Nunito", system-ui, -apple-system, sans-serif;
+        color: #7b2b4a;
+        background: url("file:///Users/n0k05m7/.cursor/projects/Users-n0k05m7-workspace-OWN-fun/assets/image-ae75b611-a2a3-458e-9d7e-82fb5c878154.png");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        padding: 2.5rem 1.5rem;
+        position: relative;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .float-hearts {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .float-hearts span {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        background: rgba(255, 154, 198, 0.7);
+        transform: rotate(45deg);
+        animation: rise 12s linear infinite;
+      }
+
+      .float-hearts span::before,
+      .float-hearts span::after {
+        content: "";
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: inherit;
+      }
+
+      .float-hearts span::before {
+        top: -7px;
+        left: 0;
+      }
+
+      .float-hearts span::after {
+        left: -7px;
+        top: 0;
+      }
+
+      .propose-card {
+        position: relative;
+        max-width: 680px;
+        width: min(92vw, 680px);
+        padding: 2.8rem 2.4rem;
+        text-align: center;
+        z-index: 1;
+        color: #f7e8ee;
+        text-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0;
+        border-radius: 0;
+        background: transparent;
+        border: 0;
+        color: inherit;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        font-size: 0.75rem;
+        margin-bottom: 1.2rem;
+      }
+
+      h1 {
+        font-family: "Playfair Display", serif;
+        margin: 0 0 1.1rem;
+        font-size: clamp(2rem, 3.5vw, 3rem);
+        color: inherit;
+      }
+
+      .message {
+        margin: 0;
+        font-size: clamp(1.1rem, 2.4vw, 1.35rem);
+        line-height: 1.7;
+        color: inherit;
+      }
+
+      .signature {
+        margin-top: 1.6rem;
+        font-weight: 700;
+        color: inherit;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(110vh) rotate(45deg) scale(0.9);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.65;
+        }
+        100% {
+          transform: translateY(-30vh) rotate(45deg) scale(1.25);
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .propose-card {
+          padding: 2.2rem 1.6rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="float-hearts" aria-hidden="true">
+      <span style="left: 12%; animation-delay: 0s"></span>
+      <span style="left: 28%; animation-delay: 1.2s"></span>
+      <span style="left: 44%; animation-delay: 2.4s"></span>
+      <span style="left: 63%; animation-delay: 0.8s"></span>
+      <span style="left: 78%; animation-delay: 1.8s"></span>
+      <span style="left: 90%; animation-delay: 3s"></span>
+    </div>
+    <main class="propose-card">
+      <h1>For You</h1>
+      <p class="message">
+        It&rsquo;s Propose Day and I don&rsquo;t have some grand speech left in me. Just that
+        I&rsquo;m still here. And it&rsquo;s you.
+      </p>
+      <div class="signature">Always.</div>
+    </main>
+  </body>
+</html>
